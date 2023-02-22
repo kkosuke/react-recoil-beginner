@@ -1,0 +1,12 @@
+body {
+  margin: 0;
+}
+
+.app{
+  width: 980px;
+  margin: auto;
+}
+
+body > iframe{
+  display: none;
+}
