@@ -1,21 +1,22 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import {PrimaryButton} from '../atoms/button/PrimaryButton';
 import {SecondaryButton} from '../atoms/button/SecondaryButton';
 import styled from 'styled-components'
 import { useHistory } from 'react-router-dom';
-import { UserContext } from '../../providers/UserProvider';
+import { useSetRecoilState } from 'recoil';
+import { userState } from '../../store/userState';
 
 export const Top = () => {
   const history = useHistory();
-  const {setUserInfo} = useContext(UserContext);
+  const setUserInfo = useSetRecoilState(userState)
   const onCLickAdmin = ()=>{
-    setUserInfo(true);
+    setUserInfo({isAdmin:true});
     history.push({
       pathname: '/users'
     });
   }
   const onCLickGeneral = ()=>{
-    setUserInfo(false);
+    setUserInfo({isAdmin:false});
     history.push({
       pathname: '/users'
     });
@@ -25,7 +26,9 @@ export const Top = () => {
       <h1>トップページ</h1>
       <PrimaryButton>テスト</PrimaryButton>
       <br/>
+      <br/>
       <SecondaryButton onClick={onCLickAdmin}>管理者ユーザー</SecondaryButton>
+      <br/>
       <br/>
       <SecondaryButton onClick={onCLickGeneral}>一般ユーザー</SecondaryButton>
     </SContainer>
