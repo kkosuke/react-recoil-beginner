@@ -1,12 +1,10 @@
 body {
   margin: 0;
+  background-color: #e4f9f5;
+  min-height: 100vh;
 }
 
-.app{
-  width: 980px;
-  margin: auto;
-}
-
+/*編集中なぜかiframeが表示されたので、不可視にする*/
 body > iframe{
   display: none;
 }
