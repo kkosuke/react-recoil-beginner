@@ -1,5 +1,5 @@
-import Page2 from '../Page2';
-import UrlParameter from '../UrlParameter';
+import Page2 from '../components/pages/Page2';
+import UrlParameter from '../components/pages//UrlParameter';
 
 export const page2Routes = [
   {
